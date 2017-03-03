@@ -480,9 +480,12 @@ namespace SandcastleBuilder.Utils
                     namespaceSummaries = new NamespaceSummaryItemCollection();
 
                     var nsProperty = msBuildProject.GetProperty("NamespaceSummaries");
-
-                    if(nsProperty != null && !String.IsNullOrWhiteSpace(nsProperty.UnevaluatedValue))
-                        namespaceSummaries.FromXml(nsProperty.UnevaluatedValue);
+                    if (nsProperty != null)
+                    {
+                        var nsPropertyValue = UsingFinalValues ? nsProperty.EvaluatedValue : nsProperty.UnevaluatedValue;
+                        if (!String.IsNullOrWhiteSpace(nsPropertyValue))
+                            namespaceSummaries.FromXml(nsPropertyValue);
+                    }
                 }
 
                 return namespaceSummaries;
