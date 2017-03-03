@@ -97,7 +97,7 @@ internal static partial class AssemblyInfo
     //
     // This may contain additional text to indicate Alpha or Beta states.  The version number will always match
     // the file version above but includes the century on the year.
-    public const string ProductVersion = "2017.3.3.0+tm";
+    public const string ProductVersion = "2017.3.3.0-tm";
 
     // Assembly copyright information
     public const string Copyright = "Copyright \xA9 2006-2017, Eric Woodruff, All Rights Reserved";
