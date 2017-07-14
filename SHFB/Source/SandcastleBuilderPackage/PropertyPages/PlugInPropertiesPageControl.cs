@@ -425,7 +425,7 @@ namespace SandcastleBuilder.Package.PropertyPages
             currentConfigs = new PlugInConfigurationDictionary();
 
             if(projProp != null && !String.IsNullOrEmpty(projProp.UnevaluatedValue))
-                currentConfigs.FromXml(projProp.UnevaluatedValue);
+                currentConfigs.FromXml(projProp.EvaluatedValue);
 
             // May already be binding so preserve the original state
             bool isBinding = this.IsBinding;

@@ -731,8 +731,8 @@ namespace SandcastleBuilder.Utils
 
                     var plugInConfigProperty = msBuildProject.GetProperty("PlugInConfigurations");
 
-                    if(plugInConfigProperty != null && !String.IsNullOrWhiteSpace(plugInConfigProperty.UnevaluatedValue))
-                        plugInConfigs.FromXml(plugInConfigProperty.UnevaluatedValue);
+					if (plugInConfigProperty != null && !String.IsNullOrWhiteSpace(plugInConfigProperty.UnevaluatedValue))
+                        plugInConfigs.FromXml(plugInConfigProperty.EvaluatedValue);
                 }
 
                 return plugInConfigs;
